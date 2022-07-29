@@ -1,0 +1,49 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        // "plugin:storybook/recommended",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.stories.*"
+            ],
+            "rules": {
+                "import/no-anonymous-default-export": "off"
+            }
+        }
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "no-duplicate-imports": "error",
+        // disble escape character e.g `&apos allow " | '' instead;
+        "react/no-unescaped-entities": 0
+    }
+}
