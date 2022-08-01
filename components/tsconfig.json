@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": [
-        "./src/packages/*/src/index.ts"
+        "./packages/*/src/index.ts"
       ],
     },
     "types": [
@@ -32,6 +32,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "src",
+    "packages"
   ]
 }

@@ -2,15 +2,15 @@ const path = require('path');
 const { lstatSync, readdirSync } = require('fs');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const basePath = path.resolve(__dirname, '../', 'src/packages');
+const basePath = path.resolve(__dirname, '../', 'packages');
 const packages = readdirSync(basePath).filter((name) =>
   lstatSync(path.join(basePath, name)).isDirectory(),
 );
 
 module.exports = {
   "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+    "../packages/**/*.stories.mdx",
+    "../packages/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
     "@storybook/addon-links",
