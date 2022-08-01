@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": [
-        "./packages/*/src/index.ts"
+        "packages/*/src"
       ],
     },
     "types": [
@@ -22,7 +22,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -35,5 +35,9 @@
     "**/*.tsx",
     "src",
     "packages"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.d.ts"
   ]
 }
