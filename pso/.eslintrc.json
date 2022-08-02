@@ -6,7 +6,7 @@
   "extends": [
     "eslint:recommended",
     "next",
-    "next/core-web-vitals",    
+    "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
@@ -52,6 +52,10 @@
     }
   ],
   "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
     "indent": [
       "error",
       2
