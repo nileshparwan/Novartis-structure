@@ -1,6 +1,6 @@
 
 import { render,cleanup } from "@testing-library/react";
-import { Header } from "@components/Header";
+import { Header } from "@components/header";
 
 describe("App Component", function () {
 
@@ -11,7 +11,7 @@ describe("App Component", function () {
     it("renders some text", () => {
         const { getByText } = render(<Header onLogin={()=>{}} onLogout={()=>{}} onCreateAccount={()=>{}}/>);
         const linkElement = getByText("acme");
-        expect(linkElement).toBeInTheDocument();
+        expect(linkElement).toBeTruthy();
     })
 
 
