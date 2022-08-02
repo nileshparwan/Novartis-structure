@@ -71,8 +71,8 @@ const Home: NextPage = () => {
 };
 
 const customcss = css`
-.container {
-  padding: 0 2rem;
+&.container {
+  margin: 0 auto;
 }
 
 .main {

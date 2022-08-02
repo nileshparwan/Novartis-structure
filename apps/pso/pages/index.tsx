@@ -2,7 +2,6 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styled, { css } from 'styled-components';
-// import Image from 'next/image'
 // import { Button } from '@hoc/Button';
 
 const Home: NextPage = () => {
@@ -76,8 +75,8 @@ const Home: NextPage = () => {
 };
 
 const customcss = css`
-.container {
-  padding: 0 2rem;
+&.container {
+  margin: 0 auto;
 }
 
 .main {
@@ -121,6 +120,7 @@ const customcss = css`
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  font-family: ${props => props.theme.theme1.font.secondary};
 }
 
 .title,
