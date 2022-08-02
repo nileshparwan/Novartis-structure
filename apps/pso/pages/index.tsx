@@ -72,8 +72,8 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </StyleWrapper>
-  )
-}
+  );
+};
 
 const customcss = css`
 .container {
@@ -197,4 +197,4 @@ const customcss = css`
 const StyleWrapper = styled.div`
 ${customcss}
 `;
-export default Home
+export default Home;

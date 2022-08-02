@@ -1,6 +1,6 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import Head from 'next/head'
+import Head from 'next/head';
 import styled, { css } from 'styled-components';
 // import Image from 'next/image'
 
@@ -67,8 +67,8 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </StyleWrapper>
-  )
-}
+  );
+};
 
 const customcss = css`
 .container {
@@ -134,8 +134,8 @@ const customcss = css`
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Courier New", "monospace";
 }
 
 .grid {
@@ -193,4 +193,4 @@ const StyleWrapper = styled.div`
 ${customcss}
 `;
 
-export default Home
+export default Home;
