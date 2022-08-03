@@ -1,9 +1,16 @@
 /** @type {import('next').NextConfig} */
+const config = require('./config/config.json');
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   compiler: {
     styledComponents: true,
+  },
+  env: {
+    CONTENTFUL_HOST: config.Contentful.CONTENTFUL_HOST,
+    CONTENTFUL_SPACE_ID: config.Contentful.main.SpaceID,
+    CONTENTFUL_ACCESS_TOKEN: config.Contentful.main.CONTENTFUL_ACCESS_TOKEN
   },
   webpack: (
     config,

@@ -10,7 +10,8 @@
     "export": "next export",
     "lint": "next lint",
     "lint:ts": "eslint **/*.{js,ts,tsx} && yarn lint:css",
-    "lint:css": "stylelint **/*.{tsx,js,ts}"
+    "lint:css": "stylelint **/*.{tsx,js,ts}",
+    "config:update": "node ./scripts/config-update.js"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
