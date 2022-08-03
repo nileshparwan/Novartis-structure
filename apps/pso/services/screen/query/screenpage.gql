@@ -1,0 +1,9 @@
+query getscreen($slug: String!,$isPreview: Boolean!) {
+    screenCollection(where: { slug_exists: true, slug: $slug }) {
+        items {
+            title
+            slug
+            colour
+        }
+    }
+}
