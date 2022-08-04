@@ -91,8 +91,8 @@ export function CreateApolloClient(): ApolloClient<NormalizedCacheObject> {
 };
 
 
-export const ExecuteQuery = async (query: DocumentNode, variables?: any, isShared?: boolean, preview?: boolean) => {
+export const ExecuteQuery = async (query: DocumentNode, variables?: any, isShared?: boolean) => {
   const client = CreateApolloClient();
-  const result = await client.query({ query: query, errorPolicy: "all", fetchPolicy: 'no-cache', variables, context: { shared: isShared, preview } }); 
+  const result = await client.query({ query: query, errorPolicy: "all", fetchPolicy: 'no-cache', variables, context: { shared: isShared } }); 
   return result?.data; 
 };

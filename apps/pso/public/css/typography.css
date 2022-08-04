@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Barlow-Regular';
+    src: url('../assets/fonts/Barlow-Regular.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'BarlowCondensed-Regular';
+  src: url('../assets/fonts/BarlowCondensed-Regular.otf') format('opentype');
+  font-display: swap;
+}

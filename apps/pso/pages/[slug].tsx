@@ -3,11 +3,10 @@ import type { NextPage, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import styled, { css } from 'styled-components';
-import { QueryScreenSlugs } from '@services/screen/screen.service';
+import { QueryScreenSlugs, QueryScreenPage } from '@services/screen/screen.service';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await QueryScreenSlugs();
-  console.log(paths);
   return {
     paths,
     fallback: false, // can also be true or 'blocking'
@@ -15,6 +14,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+  const { params: { slug } }: any = context;
+  const screenData = await QueryScreenPage(slug);
+  console.log("screen data", screenData);
   return {
     props: {}, // will be passed to the page component as props
   };
@@ -132,7 +134,6 @@ const customcss = css`
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
-  font-family: ${props => props.theme.theme1.font.secondary};
 }
 
 .title,

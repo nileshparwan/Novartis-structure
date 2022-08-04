@@ -120,7 +120,7 @@ const customcss = css`
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
-  font-family: ${props => props.theme.theme1.font.secondary};
+  font-family: var(--font-secondary)
 }
 
 .title,

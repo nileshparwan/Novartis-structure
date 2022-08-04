@@ -2,7 +2,7 @@
 // e.g component props 
 
 
-interface IslugList {
+export interface IslugList {
     params: {
         slug: string;
     }
