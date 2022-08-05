@@ -15,7 +15,7 @@ module.exports = {
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|tsx)$"
   ],
   testMatch: ['**/__tests__/*.+(ts|tsx|js)', '**/*.test.+(ts|tsx|js)'],
-  setupFilesAfterEnv: ['<rootDir>/src/jest/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest/setupTests.ts'],
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/packages/$1/src',
     '^@/(.*)$': '<rootDir>/packages/$1/src',
