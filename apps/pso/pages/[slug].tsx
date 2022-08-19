@@ -14,9 +14,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
-  const { params: { slug } }: any = context;
-  const screenData = await QueryScreenPage(slug);
-  console.log("screen data", screenData);
+  const screenData = await QueryScreenPage(context?.params?.slug as string);
+  console.log('screen data', screenData);
   return {
     props: {}, // will be passed to the page component as props
   };
