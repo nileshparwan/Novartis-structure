@@ -3,11 +3,12 @@ export type ThemeType = typeof theme;
 
 const theme1 = {
   font: {
-    primary: 'font-primary-regular',
-    secondary: 'font-secondary-regular',
+    primary: 'var(--font-primary)',
+    secondary: 'var(--font-primary)'
   },
   color: {
-    primary: '#00b2a9',
+    orange: 'var(--orange)',
+    blue: 'var(--blue)'
   }
 }
 

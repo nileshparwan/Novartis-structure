@@ -106,7 +106,7 @@ const customcss = css`
 }
 
 .title a {
-  color: #0070f3;
+  color: ${props => props.theme.theme1.color.blue};
   text-decoration: none;
 }
 
@@ -166,8 +166,8 @@ const customcss = css`
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: ${props => props.theme.theme1.color.blue};
+  border-color: ${props => props.theme.theme1.color.blue};
 }
 
 .card h2 {

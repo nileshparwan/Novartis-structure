@@ -1,0 +1,23 @@
+{
+  "SiteName": "Novartis",
+  "BaseUrl": "",
+  "Environment": "Staging",
+  "Direction": "ltr",
+  "locale": "en-US",
+  "Contentful": {
+    "main": {
+      "SpaceID": "vw8nhchr557z",
+      "URL": "https://graphql.contentful.com",
+      "Authorization": "yt52uQJkohYjm8OoozMYci0IIHV03ccVQA2OQCwQfeY",
+      "Preview-Authorization": "ZJOX8m8ffxrRFM6kCYz6h8KKLrYL9ekyVaxioW5bj5s",
+      "DeliveryURL": "https://graphql.contentful.com/content/v1/spaces/vw8nhchr557z",
+      "Branch": "",
+      "SiteSettingId": "fbcFqs6di1UxEHWiXbDNo",
+      "SpaceName": "Novartis",
+      "environment": "testContents"
+    }
+  },
+  "pages": {
+    "locale": "pso"
+  }
+}

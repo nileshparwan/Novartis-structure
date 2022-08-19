@@ -2,7 +2,11 @@ import { css } from 'styled-components';
 
 const rootFontStyles = css`
   :root {
-    --font-primary: 'Harmonia Sans Std Regular';
+    --font-primary: 'Barlow-Regular';
+  }
+
+  body {
+    font-family: var(--font-primary), Arial, Helvetica, sans-serif;
   }
 `;
 

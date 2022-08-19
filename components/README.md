@@ -14,10 +14,39 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run storybook`
+
+Runs the app in the development mode.\
+Open [http://localhost:9009](http://localhost:9009) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+Likewise, you will be able to view the different stories
+
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+Other command to use beside `npm run test` are: 
+`jest -u`: runs jest on node. 
+`jest --coverage`: Number og lines covered by unit test
+                   Percentage test done       
+
+### `npm run lint`
+
+Launches the lint runner in the interactive watch mode.
+List all css and ts/tsx issues in the application   
+
+### `npm run lint:ts`
+
+Launches the lint runner in the interactive watch mode.
+List all ts/tsx issues in the application
+
+### `npm run lint:css`
+Launches the lint runner in the interactive watch mode.
+List all css issues in the application
 
 ### `npm run build`
 
@@ -28,6 +57,14 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run build-storybook`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React stories in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
 ### `npm run eject`
 

@@ -1,0 +1,8 @@
+query getscreen($slug: String!) {
+    screenCollection(where: { slug_exists: true, slug: $slug }) {
+        items {
+            title
+            slug
+        }
+    }
+}
