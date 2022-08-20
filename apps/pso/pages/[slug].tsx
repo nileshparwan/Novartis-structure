@@ -14,10 +14,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
-  const screenData = await QueryScreenPage(context?.params?.slug as string);
-  console.log('screen data', screenData);
+  const screenPage = await QueryScreenPage(context?.params?.slug as string);
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      page: screenPage
+    }, // will be passed to the page component as props
   };
 };
 
