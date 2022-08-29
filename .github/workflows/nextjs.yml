@@ -13,7 +13,15 @@ jobs:
       - name: Setup Node.js
         run: |
           actions/setup-node@v2
+          
+      - name: component npm install 
+        run: |
           cd ./components && npm ci
+      
+      - name: Page npm install 
+        run: |
           cd ../apps/pso && npm ci 
-          npm run export
+      
+      - name: Export 
+      - run: npm run export
           
