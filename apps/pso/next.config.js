@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const TerserPlugin = require("terser-webpack-plugin");
 const config = require('./config/config.json');
 
 // const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -8,6 +9,7 @@ const config = require('./config/config.json');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+
   compiler: {
     styledComponents: true,
   },
@@ -16,12 +18,23 @@ const nextConfig = {
     CONTENTFUL_SPACE_ID: config.Contentful.main.SpaceID,
     CONTENTFUL_ACCESS_TOKEN: config.Contentful.main.CONTENTFUL_ACCESS_TOKEN
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack: (
     config,
     { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
   ) => {
     // Important: return the modified config
 
+    config.optimization = {
+      ...config.optimization,
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+    }
 
     config.module.rules.push(
       {
