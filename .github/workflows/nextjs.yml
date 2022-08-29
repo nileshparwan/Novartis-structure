@@ -23,5 +23,5 @@ jobs:
           cd ../apps/pso && npm ci 
       
       - name: Export 
-      - run: npm run export
+        run: npm run export
           
