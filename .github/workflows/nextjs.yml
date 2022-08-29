@@ -31,5 +31,13 @@ jobs:
       - name: Export 
         working-directory: ./apps/pso
         run: npm run export
-    
+      
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          # Artifact name
+          name: artifacts
+          # Destination path
+          path: apps/pso
+
           
