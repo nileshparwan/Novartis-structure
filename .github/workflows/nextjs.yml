@@ -10,12 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
-      - name: Setup Node.js
-        working-directory: ./components
-        run: |
-          actions/setup-node@v1
-          
+                  
       - name: component npm install 
         working-directory: ./components
         run: |
