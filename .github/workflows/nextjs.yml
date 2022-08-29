@@ -5,7 +5,7 @@ on:
       - feature/theme-provider
 jobs:
   release:
-    name: Create Release
+    name: Stage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,7 +15,7 @@ jobs:
         working-directory: ./components
         run: |
           npm ci
-      
+
       - name: Page npm install 
         working-directory: ./apps/pso
         run: |
@@ -24,4 +24,10 @@ jobs:
       - name: Export 
         working-directory: ./apps/pso
         run: npm run export
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.0
+
+      
+    
           
