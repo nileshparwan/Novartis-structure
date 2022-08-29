@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
       - name: Install Dependencies Page
         working-directory: ./apps/pso
         run: |
@@ -28,13 +31,5 @@ jobs:
       - name: Export 
         working-directory: ./apps/pso
         run: npm run export
-      
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
-        with:
-          # Artifact name
-          name: artifacts
-          # Destination path
-          path: downloads
     
           
