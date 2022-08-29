@@ -48,11 +48,11 @@ jobs:
         uses: sibiraj-s/action-archiver@v1.1.0
         with:
           # Current working directory for the action
-          working-directory: ./app/pso
+          working-directory: ./apps/pso
           # The archive format to use. Either zip or tar
           format: tar
           # A File or directory or glob pattern to archive
-          path: ./app/pso/out
+          path: ./apps/pso/out
           # Name of the output file
           output: build
 
