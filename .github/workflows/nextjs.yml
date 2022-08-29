@@ -15,28 +15,24 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
+      
+      - name: Build
+        working-directory: ./component
+        run: npm run build --if-present
                   
       - name: Install Dependencies component
         working-directory: ./components
         run: |
           npm ci
-          
-  Deploy: 
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16.x'
         
       - name: Install Dependencies Page
         working-directory: ./apps/pso
         run: |
           npm ci 
+      
+      - name: Build
+        working-directory: ./component
+        run: npm run build --if-present
 
       - name: Export 
         working-directory: ./apps/pso
