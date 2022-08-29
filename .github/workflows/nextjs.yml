@@ -1,43 +1,19 @@
 # .github/workflows/main.yml
-name: CI
 on:
   push:
-    branches: [ feature/theme-provider ]
-  pull_request:
-    branches: [ feature/theme-provider ]
-  workflow_dispatch:
+    branches:
+      - feature/theme-provider
 jobs:
-  build:
-    name: CI Pipeline
+  release:
+    name: Create Release
     runs-on: ubuntu-latest
-    environment: staging
-
     steps:
       - name: Checkout
-      - run: actions/checkout@v2
-      
-      - name: Setup node ${{ matrix.node-version }}
-        run: actions/setup-node@v2
-      
-      - name: npm install component
-        run: cd ./components && npm install
-      
-  
-  Deploy: 
-    name: CD Pipeline
-    runs-on: ubuntu-latest
-    environment: staging
-    needs: [build]
-        
-    steps:
-      - name: Setup repository
         uses: actions/checkout@v2
-
-      - name: Setup node ${{ matrix.node-version }}
-        run: actions/setup-node@v2
+      - name: Setup Node.js
+        run: |
+          actions/setup-node@v2
+          cd ./components && npm ci
+          cd ../apps/pso && npm ci 
+          npm run export
           
-      - name: npm install page 
-        run: cd ./apps/pso && npm run install 
-
-      - name: Deploy Next.js app
-        run: npm run export
