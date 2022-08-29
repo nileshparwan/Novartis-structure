@@ -10,18 +10,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
       - name: Setup Node.js
+        working-directory: ./components
         run: |
-          actions/setup-node@v2
+          actions/setup-node@v1
           
       - name: component npm install 
+        working-directory: ./components
         run: |
-          cd ./components && npm ci
+          npm ci
       
       - name: Page npm install 
+        working-directory: ./apps/pso
         run: |
-          cd ../apps/pso && npm ci 
+          npm ci 
       
       - name: Export 
+        working-directory: ./apps/pso
         run: npm run export
           
