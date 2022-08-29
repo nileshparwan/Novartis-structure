@@ -38,6 +38,6 @@ jobs:
           # Artifact name
           name: artifacts
           # Destination path
-          path: apps/pso
+          path: apps/pso/out
 
           
