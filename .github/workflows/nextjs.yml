@@ -22,18 +22,17 @@ jobs:
     needs: build
     steps:
       - name: Install Dependencies Page
-        run: echo Hello from another job 
-#         working-directory: ./apps/pso
-#         run: |
-#           npm ci 
+        working-directory: ./apps/pso
+        run: |
+          npm ci 
 
-#       - name: Build
-#         working-directory: ./component
-#         run: npm run build --if-present
+      - name: Build
+        working-directory: ./component
+        run: npm run build --if-present
 
-#       - name: Export 
-#         working-directory: ./apps/pso
-#         run: npm run export
+      - name: Export 
+        working-directory: ./apps/pso
+        run: npm run export
       
     
           
