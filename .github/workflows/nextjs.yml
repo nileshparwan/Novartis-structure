@@ -7,7 +7,6 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    name: Stage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,8 +18,8 @@ jobs:
           npm ci
         
   Deploy:
-    name: Deploy
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Install Dependencies Page
         run: echo Hello from another job 
