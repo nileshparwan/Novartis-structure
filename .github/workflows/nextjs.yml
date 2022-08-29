@@ -11,17 +11,13 @@ jobs:
     name: CI Pipeline
     runs-on: ubuntu-latest
     environment: staging
-    strategy:
-      matrix:
-        node-version: ["16.x"]
+
     steps:
       - name: Checkout
-      - uses: actions/checkout@v2
+      - run: actions/checkout@v2
       
       - name: Setup node ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
+        run: actions/setup-node@v2
       
       - name: npm install component
         run: cd ./components && npm install
@@ -32,19 +28,13 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     needs: [build]
-    strategy:
-      matrix:
-        node-version: ["16.x"]
-        appname: ["main_app"]
         
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
 
       - name: Setup node ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
+        run: actions/setup-node@v2
           
       - name: npm install page 
         run: cd ./apps/pso && npm run install 
