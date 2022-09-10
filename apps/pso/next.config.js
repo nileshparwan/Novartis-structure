@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const TerserPlugin = require("terser-webpack-plugin");
+const path = require("path");
 const config = require('./config/config.json');
 
-// const withBundleAnalyzer = require('@next/bundle-analyzer')({
-//   enabled: process.env.ANALYZE === 'true',
-// })
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig = {
   reactStrictMode: true,
@@ -34,7 +35,7 @@ const nextConfig = {
       ...config.optimization,
       minimize: true,
       minimizer: [new TerserPlugin()],
-    }
+    };
 
     config.module.rules.push(
       {
@@ -42,11 +43,16 @@ const nextConfig = {
         exclude: /node_modules/,
         loader: 'graphql-tag/loader',
       },
-    );
+      {
+        test: /\.(tsx|ts)?$/,
+        exclude: /node_modules/,
+        include: path.resolve(__dirname, '../../components'),
+        loader: 'ts-loader',
+      }
+      );
 
     return config;
   },
 };
 
-module.exports = nextConfig;
-// withBundleAnalyzer();
+module.exports = withBundleAnalyzer(nextConfig);
