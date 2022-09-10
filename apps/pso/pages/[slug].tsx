@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import styled, { css } from 'styled-components';
 import { QueryScreenSlugs, QueryScreenPage } from '@services/screen/screen.service';
+import {Header} from "@components/header"
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await QueryScreenSlugs();
@@ -32,6 +33,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="main">
+    
+        <Header 
+          user={{name: "some name"}}
+          onLogin={()=>{}}
+          onLogout={()=>{}}
+          onCreateAccount={()=>{}}
+        />
         <h1 className="title">
           Welcome to <a href="https://nextjs.org">About page - Next.js!</a>
         </h1>
