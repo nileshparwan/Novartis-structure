@@ -1,11 +1,27 @@
 /** @type {import('next').NextConfig} */
 const TerserPlugin = require("terser-webpack-plugin");
+const { lstatSync, readdirSync } = require('fs');
+
 const path = require("path");
 const config = require('./config/config.json');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+
+// alias
+const basePath = path.resolve(__dirname, '../../components', 'packages');
+const packages = readdirSync(basePath).filter((name) =>
+  lstatSync(path.join(basePath, name)).isDirectory(),
+);
+
+const aliases = packages.reduce((previousValue, currentValue) => {
+  return {
+    ...previousValue,
+    [`@components/${currentValue}`]: path.join(basePath, currentValue, 'src'),
+  }
+}, {}); 
+// {} => is the initial value 
 
 const nextConfig = {
   reactStrictMode: true,
@@ -35,7 +51,7 @@ const nextConfig = {
       ...config.resolve,
       alias: {
         ...config.resolve.alias,
-        '@Components': path.resolve(__dirname, '../../components/packages/header/src')
+        ...aliases
       }
     }
 
