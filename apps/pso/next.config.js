@@ -75,6 +75,10 @@ const nextConfig = {
       minimizer: [new TerserPlugin()],
     };
 
+    config.resolve.fallback = {
+      fs: false
+    }
+
     return config;
   },
 };
