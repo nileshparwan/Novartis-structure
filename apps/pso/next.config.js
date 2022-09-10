@@ -31,6 +31,14 @@ const nextConfig = {
   ) => {
     // Important: return the modified config
 
+    config.resolve = {
+      ...config.resolve,
+      alias: {
+        ...config.resolve.alias,
+        '@Components': path.resolve(__dirname, '../../components')
+      }
+    }
+
     config.module.rules.push(
       {
         test: /\.(graphql|gql)$/,
@@ -43,7 +51,6 @@ const nextConfig = {
         include: path.resolve(__dirname, '../../components'),
         loader: 'ts-loader',
       }
-
     );
 
     config.optimization = {
