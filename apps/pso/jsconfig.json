@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "../../components/packages/*/src"
+      ],
+      "@hoc/*": [
+        "components/hoc/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ]
+    }
+  },
+  //Add any build/compiled folders here to stop vscode searching those
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
