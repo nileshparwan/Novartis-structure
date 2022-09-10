@@ -35,7 +35,7 @@ const nextConfig = {
       ...config.resolve,
       alias: {
         ...config.resolve.alias,
-        '@Components': path.resolve(__dirname, '../../components/packages')
+        '@Components': path.resolve(__dirname, '../../components/packages/header/src')
       }
     }
 
@@ -48,7 +48,7 @@ const nextConfig = {
       {
         test: /\.(tsx|ts)?$/,
         exclude: /node_modules/,
-        include: path.resolve(__dirname, '../../components/packages'),
+        include: path.resolve(__dirname, '../../components'),
         loader: 'ts-loader',
       }
     );
