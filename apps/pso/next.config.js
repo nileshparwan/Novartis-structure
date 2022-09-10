@@ -49,6 +49,11 @@ const nextConfig = {
 
     config.resolve = {
       ...config.resolve,
+      modules: [
+        ...config.resolve.modules,
+        path.resolve(__dirname, '../../components'),
+        path.resolve(__dirname, 'styles'),
+      ],
       alias: {
         ...config.resolve.alias,
         ...aliases
@@ -74,10 +79,6 @@ const nextConfig = {
       minimize: true,
       minimizer: [new TerserPlugin()],
     };
-
-    config.resolve.fallback = {
-      fs: false
-    }
 
     return config;
   },
