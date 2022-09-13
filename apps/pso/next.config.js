@@ -10,17 +10,17 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 // alias
-const basePath = path.resolve(__dirname, '../../components', 'packages');
-const packages = readdirSync(basePath).filter((name) =>
-  lstatSync(path.join(basePath, name)).isDirectory(),
-);
+// const basePath = path.resolve(__dirname, '../../components', 'packages');
+// const packages = readdirSync(basePath).filter((name) =>
+//   lstatSync(path.join(basePath, name)).isDirectory(),
+// );
 
-const aliases = packages.reduce((previousValue, currentValue) => {
-  return {
-    ...previousValue,
-    [`@components/${currentValue}`]: path.join(basePath, currentValue, 'src'),
-  }
-}, {}); 
+// const aliases = packages.reduce((previousValue, currentValue) => {
+//   return {
+//     ...previousValue,
+//     [`@components/${currentValue}`]: path.join(basePath, currentValue, 'src'),
+//   }
+// }, {}); 
 // {} => is the initial value 
 
 const nextConfig = {
@@ -47,18 +47,18 @@ const nextConfig = {
   ) => {
     // Important: return the modified config
 
-    config.resolve = {
-      ...config.resolve,
-      modules: [
-        ...config.resolve.modules,
-        path.resolve(__dirname, '../../components'),
-        path.resolve(__dirname, 'styles'),
-      ],
-      alias: {
-        ...config.resolve.alias,
-        ...aliases
-      }
-    }
+//     config.resolve = {
+//       ...config.resolve,
+//       modules: [
+//         ...config.resolve.modules,
+//         path.resolve(__dirname, '../../components'),
+//         path.resolve(__dirname, 'styles'),
+//       ],
+//       alias: {
+//         ...config.resolve.alias,
+//         ...aliases
+//       }
+//     }
 
     config.module.rules.push(
       {
